@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+	char ch[13];
+	int m, n, i = 0, flag = 1;
+	while (i < 13)
+	{
+		ch[i] = getchar();
+		i++;
+	}
+	scanf_s("%d%d", &n, &m);
+	if (n > 0 && n <= 13)
+	{
+		if ((m + n) < 13)
+		{
+			for (i = n-1; i < m + n-1; i++)
+			{
+				printf("%c", ch[i]);
+			}
+		}
+		else
+		{
+			for (i = n-1; i < 13; i++)
+			{
+				printf("%c", ch[i]);
+			}
+		}
+	}
+	else
+	{
+		printf("起始位置%d越界", n);
+	}
+}
