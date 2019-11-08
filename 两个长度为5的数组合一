@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+	int a[5], b[5], c[10], i, m, j;
+	for (i = 0; i < 5; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	for (i = 0; i < 5; i++)
+	{
+		scanf_s("%d", &b[i]);
+	}
+	for (i = 0; i < 5; i++)
+	{
+		c[i] = a[i];
+	}
+	for (j = 0; j < 5; j++, i++)
+	{
+		c[i] = b[j];
+	}
+	for (j = 0; j < 10; j++)
+	{
+		for (i = 0; i < 9; i++)
+		{
+			if (c[i] >= c[i + 1])
+			{
+				m = c[i];
+				c[i] = c[i + 1];
+				c[i + 1] = m;
+			}
+		}
+	}
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", c[i]);
+	}
+}
