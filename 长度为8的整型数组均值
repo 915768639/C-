@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int a[8], i, sum = 0;
+	float ave;
+	for (i = 0; i < 8; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	for (i = 0; i < 8; i++)
+	{
+		sum += a[i];
+	}
+	ave = sum / 8.0;
+	printf("平均值是%.1f\n", ave);
+	printf("大于平均值的数据是");
+	for (i = 0; i < 8; i++)
+	{
+		if (a[i] > ave)
+		{
+			printf("%d ", a[i]);
+		}
+	}
+}
