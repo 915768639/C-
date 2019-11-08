@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int a[10], i, br, min;
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	for (i = 0, min = i; i < 10; i++)
+	{
+		if (a[min] > a[i])
+		{
+			min = i;
+		}
+	}
+	br = a[min];
+	a[min] = a[0];
+	a[0] = br;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", a[i]);
+	}
+}
