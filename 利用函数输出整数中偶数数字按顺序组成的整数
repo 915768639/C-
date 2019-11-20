@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<math.h>
+long compose(long number);
+long weishu(long number);
+int main()
+{
+	long int n;
+	scanf_s("%ld", &n);
+	printf("%ld\n", compose(n));
+	return 0;
+}
+long compose(long number)
+{
+	long int i, a[80], b[80], nnumber, j = 0, n = 0, br;
+	nnumber = weishu(number);
+	br = number;
+	for (i = nnumber - 1; i >= 0; i--)
+	{
+		b[i] = br % 10;
+		br /= 10;
+	}
+	for (i = 0; i < nnumber; i++)
+	{
+		if (b[i] % 2 == 0)
+		{
+			a[j] = b[i];
+			j++;
+		}
+	}
+	for (i = 0; i < j; i++)
+	{
+		n = n + a[i] * pow(10, (j - 1 - i));
+	}
+	return n;
+}
+long weishu(long number)
+{
+	int i;
+	for (i = 1; number; i++)
+	{
+		number = number / 10;
+	}
+	return i - 1;
+}
