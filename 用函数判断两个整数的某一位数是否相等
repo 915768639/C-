@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+int weishu(int a);
+void fun(int m, int n, int k);
+int main()
+{
+	int m, n, k;
+	scanf_s("%d%d%d", &m, &n, &k);
+	fun(m, n, k);
+}
+void fun(int m, int n, int k)
+{
+	int i, m1, n1, nm, nn;
+	nm = weishu(m);
+	nn = weishu(n);
+	m1 = m / (pow(10,nm-k-1));
+	m1 = m1 % 10;
+	n1 = n / (pow(10,nn-k-1));
+	n1 = n1 % 10;
+	if (m1 == n1)
+	{
+		printf("YES\n");
+	}
+	else
+	{
+		printf("NO\n");
+	}
+}
+int weishu(int a)
+{
+	int i, b;
+	b = 1;
+	for (i = 1; b; i++)
+	{
+		b = a / (pow(10, i));
+	}
+	return i - 1;
+}
