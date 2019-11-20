@@ -1,0 +1,20 @@
+#include<stdio.h>
+void del_samechar(char str[]);
+int main()
+{
+	char str[80];
+	gets(str);
+	del_samechar(str);
+	puts(str);
+}
+void del_samechar(char str[])
+{
+	char* p = str, * q;
+	while (*p)
+	{
+		for (q = p + 1; *p == *q; q++);
+		if (q == p + 1)*str++ = *p++;
+		else p = q;
+	}
+	*str = '\0';
+}
