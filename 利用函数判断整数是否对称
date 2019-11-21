@@ -56,5 +56,5 @@ long fun(long n)
 			printf("YES\n");
 		}
 	}
-	返回0;
+	 return 0;
 }
