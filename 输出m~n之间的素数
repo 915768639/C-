@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int m, n, t = 2, c = 1, a=0;
+	scanf_s("%d%d", &m, &n);
+	while (m <= n)
+	{
+		while (t <= m && c != 0)
+		{
+			c = m % t;
+			if (c == 0 && t < m)
+				break;
+			else if (c == 0 && t == m)
+			{
+				printf("%-5d", t);
+				a++;
+				if (a % 5 == 0)
+					printf("\n");
+			}
+			t++;
+		}
+		t = 2;
+		c = 1;
+		m++;
+	}
+}
