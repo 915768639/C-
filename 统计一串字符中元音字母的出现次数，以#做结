@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	char ch;
+	int a = 0, e = 0, i = 0, o = 0, u = 0;
+	do
+	{
+		ch = getchar();
+		if (ch =='A' || ch== 'a')
+			a++;
+		if (ch == 'E' || ch == 'e')
+			e++;
+		if (ch == 'I' || ch == 'i')
+			i++;
+		if (ch == 'O' || ch == 'o')
+			o++;
+		if (ch == 'U' || ch == 'u')
+			u++;
+	} while (ch != '\n');
+	printf("a:%d\ne:%d\ni:%d\no:%d\nu:%d\n", a, e, i, o, u);
+}
