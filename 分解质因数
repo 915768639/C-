@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int i=0,n,flag=1,y=2,last=1,m;
+	scanf("%d",&n);
+	printf("%d=",n);
+	m=n;
+	while(flag)
+	{
+		if(n%y==0)
+		{
+			n/=y;
+			last*=y;
+			printf("%d",y);
+		    if(last==m)
+		    {
+			    flag=0;
+		    }
+			if(flag)
+			{
+				printf("*");
+			}
+		}
+		else
+			y++;
+	}
+}
