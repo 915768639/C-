@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+#include <math.h>
+
+void main()
+
+{
+
+    int i,n;
+
+    float a,e,x;
+
+    scanf("%f",&x);
+
+    e=1;
+
+    i=1;
+
+    a=1;
+
+    while(a>(1e-6))
+
+    {
+
+		a=a*(x/i);
+
+        e=e+a;
+
+        i++;
+
+    }
+
+    printf("exp(x)=%f\n",e);
+
+    printf("循环次数为：%d次，e的x次方为：%f\n",i,e);
+
+}
