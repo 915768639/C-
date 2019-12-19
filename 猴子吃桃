@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+	int total,i;
+	for(total=1,i=1;i<=9;i++)
+	{
+		total=(total+1)*2;
+	}
+	printf("total=%d",total);
+}
