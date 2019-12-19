@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+    int best,a1,a2,a3,a4;
+	for(best=1;best<5;best++)
+	{
+		a1=(best==2);
+		a2=(best==4);
+		a3=(best!=3);
+		a4=(best!=4);
+		if((a1+a2+a3+a4)==1)
+			printf("最好的赛车编号为%d",best);
+	}
+}
