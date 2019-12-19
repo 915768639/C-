@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int a,b,c,d,i,flag=1;
+	scanf("%d,%d",&a,&b);
+	for(i=(a>b)?a:b;flag;i++)
+	{
+		if((i%a==0)&&(i%b==0))
+			flag=0;
+	}
+	c=i-1;
+	flag=(a<b)?a:b;
+	for(i=1;i<=flag;i++)
+	{
+		if((a%i==0)&&(b%i==0))
+			d=i;
+	}
+	printf("最大公约数是%d\n",d);
+	printf("最小公倍数是%d",c);
+}
