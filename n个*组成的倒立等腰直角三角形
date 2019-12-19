@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int n, i = 1, m, s;
+	scanf("%d", &n);
+	m = n;
+	s = 1;
+	while (i <= n)
+	{
+		while (s <= m)
+		{
+			printf("*");
+			s++;
+		}
+		s = 1;
+		printf("\n");
+		i++;
+		m--;
+	}
+}
