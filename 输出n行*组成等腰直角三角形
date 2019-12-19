@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int n, i = 1, m = 1, s = 1;
+	scanf("%d", &n);
+	while (i <= n)
+	{
+		while(s<=m)
+		{
+		printf("*");
+		s++;
+	    }
+		s = 1;
+		printf("\n");
+		i++;
+		m++;
+	}
+}
