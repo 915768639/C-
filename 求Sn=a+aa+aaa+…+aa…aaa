@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+int fuzhishu(int a, int n)
+{
+	int s = 0, i;
+	for (i = 0; i < n+1; i++)
+	{
+		s += a * pow(10, i);
+	}
+	return s;
+}
+int main()
+{
+	int a, n, s = 0, i, s0;
+	scanf("%d%d", &a, &n);
+	for (i = 0; i < n; i++)
+	{
+		s0 = fuzhishu(a, i);
+		s += s0;
+	}
+	printf("sum=%d", s);
+}
