@@ -1,0 +1,31 @@
+#include<stdio.h>
+int Inshu(int n, int inshu[])
+{
+	int i, j = 0;
+	for (i = 1; i < n; i++)
+	{
+		if (n % i == 0)
+		{
+			inshu[j] = i;
+			j++;
+		}
+	}
+	return j;
+}
+int main()
+{
+	int i, inshu[80], j, sum, num;
+
+	for (i = 1; i < 1000; i++)
+	{
+		num = Inshu(i, inshu);
+		for (j = 0,sum=0; num; j++, num--)
+		{
+			sum += inshu[j];
+		}
+		if (sum == i)
+		{
+			printf("%d\n", i);
+		}
+	}
+}
