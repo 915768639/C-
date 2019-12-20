@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int a[11] = { 1,4,6,9,13,16,19,28,40,100 }, temp, aim, i = 0, flag=0;
+	scanf_s("%d", &aim);
+	for (; i < 11; i++)
+	{
+		if (aim <= a[i])
+		{
+			temp = i;
+            flag=1;
+			break;
+		}
+	}
+  if(flag)	
+  {
+    for (i = 10; i > temp; i--)
+	{
+		a[i] = a[i - 1];
+	}
+	a[temp] = aim;
+  }
+  else
+    a[10]=aim;
+	for (i = 0; i < 11; i++)
+	{
+		printf("%d ", a[i]);
+	}
+}
