@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char ch[80], x, c[8];
+	memset(c, 0, sizeof(c));
+	int i = -1, n=0;
+	do
+	{
+		i++;
+		scanf_s("%c", &ch[i],1);
+	} while (ch[i] != '\n');
+	scanf_s("%c", &x);
+	printf("特定字符是%c\n", x);
+	for (i = 0; ch[i] != '\n'; i++)
+	{
+		if (ch[i] == x)
+		{
+			n = i;
+			break;
+		}
+		else
+			n = -1;
+	}
+	if (n == -1)
+		printf("特定字符不存在\n");
+	else
+	{
+		strcpy_s(ch + n, 8, c);
+		printf("删除特定字符%c后的字符串是", x);
+		for (i = 0; ch[i]; i++)
+		{
+			printf("%c", ch[i]);
+		}
+	}
+}
