@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int c[10], i, min, temp, j = 0, flag;
+	for (i = 0; i < 10; i++)
+	{
+		scanf_s("%d", c + i);
+	}
+	for (i = 0; i < 10; i++)
+	{
+		flag = 0;
+		min = i;
+		for (j = i+1; j < 10; j++)
+		{
+			if (c[min] > c[j])
+			{
+				min = j;
+				flag = 1;
+			}
+		}
+		if (flag)
+		{
+			temp = c[i];
+			c[i] = c[min];
+			c[min] = temp;
+		}
+	}
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", c[i]);
+	}
+}
