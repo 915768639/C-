@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int i, m = 0, p=1;
+	char a[10][80];
+	for (i = 0; p != 0; i++)
+	{
+		scanf_s("%s", a[i],80);
+		p = strcmp(a[i], "stop");
+	}
+	for (i = 0; a[i] != '\0'; i++)
+	{
+		p = strcmp(a[i], "stop");
+		if (p == 0)
+			break;
+		else
+			m++;
+	}
+	printf("%d\n", m);
+}
