@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n, i, max, j;
+	char ch[12] = { 0 }, temp;
+	scanf_s("%d", &n);
+	itoa(n, ch, 10);
+	for (j = 0; ch[j]; j++)
+	{
+		max = j;
+		for (i = j; ch[i]; i++)
+		{
+			if (ch[max] < ch[i])
+			{
+				max = i;
+			}
+		}
+		temp = ch[j];
+		ch[j] = ch[max];
+		ch[max] = temp;
+	}
+	printf("%s", ch);
+}
