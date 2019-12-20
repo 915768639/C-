@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	float a[4][4], sum=0;
+	int i, j;
+	for (i = 0; i < 16; i++)
+	{
+		scanf_s("%f", a[0] + i, 1);
+	}
+	for (i = 0, j = 0; i < 4; i++, j++)
+	{
+		sum += a[i][j];
+	}
+	printf("%.1f", sum);
+}
