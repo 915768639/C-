@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n = 0, a[100], i, j, b[10] = { 0 }, k;
+	char ch[100][12] = { 0 }, c;
+	scanf_s("%d", &n);
+	for (i = 0; i < n; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	for (i = 0; i < n; i++)
+	{
+		itoa(a[i], ch[i], 10);
+	}
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; ch[i][j]; j++)
+		{
+			for (k = 0; k < 10; k++)
+			{
+				if (ch[i][j] == k + 48)
+				{
+					b[k]++;
+					break;
+				}
+			}
+		}
+	}
+	int max, pmax[5];
+	max = b[0];
+	for (i = 1, j = 0; i < 10; i++)
+	{
+		if (max < b[i])
+		{
+			max = b[i];
+		}
+	}
+	for (i = 0,j = 0; i < 10; i++)
+	{
+		if (max == b[i])
+		{
+			pmax[j] = i;
+			j++;
+		}
+	}
+	printf("出现次数最多%d次的数字是 ", max);
+	for (i = 0; i <= j-1; i++)
+	{
+		printf("%d ", pmax[i]);
+	}
+}
