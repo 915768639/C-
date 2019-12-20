@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	char ch[80] = { 0 };
+	int i = -1, n = 0;
+	do
+	{
+		i++;
+		scanf_s("%c", &ch[i]);
+	} while (ch[i]!='\n');
+	for (i = 0; ch[i]!='\0'; i++)
+	{
+		if (ch[i] >= '0' && ch[i] <= '9')
+		{
+			n++;
+		}
+	}
+	printf("%d\n", n);
+}
