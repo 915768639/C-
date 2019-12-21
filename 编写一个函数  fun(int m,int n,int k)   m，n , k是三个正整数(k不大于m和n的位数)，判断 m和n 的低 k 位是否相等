@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int fun(int m,int n,int k)
+{
+	int flag, i, len1, len2;
+	char c1[16], c2[16];
+	itoa(m, c1, 10);
+	itoa(n, c2, 10);
+	len1 = strlen(c1);
+	len2 = strlen(c2);
+	if (c1[len1 - k] == c2[len2 - k])
+	{
+		flag = 1;
+	}
+	else
+		flag = 0;
+	return flag;
+}
+int main()
+{
+	int m, n, k;
+	scanf("%d%d%d", &m, &n, &k);
+	if (fun(m, n, k))
+		printf("YES\n");
+	else
+		printf("NO\n");
+}
