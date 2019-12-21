@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	int n, len, i;
+	char ch[20], temp;
+	scanf_s("%d", &n);
+	itoa(n, ch, 10);
+	len = strlen(ch);
+	printf("位数:%d\n每位数字为:", len);
+	for (i = 0; i < len; i++)
+	{
+		printf("%c", ch[i]);
+		if (i + 1 < len)
+		{
+			printf(",");
+		}
+	}
+	for (i = 0; i < len; i++)
+	{
+		temp = ch[i];
+		ch[i] = ch[len - 1];
+		ch[len - 1] = temp;
+		len--;
+	}
+	printf("\n逆序数字为:");
+	len = strlen(ch);
+	for (i = 0; i < len; i++)
+	{
+		printf("%c", ch[i]);
+	}
+}
