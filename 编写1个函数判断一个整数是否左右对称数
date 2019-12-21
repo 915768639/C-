@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int fun(long m)
+{
+	int flag, i, len;
+	char ch[40];
+	_itoa(m, ch, 10);
+	len = strlen(ch);
+	for (i = 0; i < len; i++, len--)
+	{
+		if (ch[i] == ch[len - 1])
+		{
+			flag = 1;
+		}
+		else
+		{
+			flag = 0;
+			break;
+		}
+	}
+	return flag;
+}
+int main()
+{
+	long in;
+	scanf("%ld", &in);
+	if (fun(in))
+		printf("YES\n");
+	else
+		printf("NO\n");
+}
