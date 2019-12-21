@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+void counta_z(char str[], int a[])
+{
+	int i, j, len;
+	len = strlen(str);
+	for (i = 0; i < len; i++)
+	{
+		for (j = 0; j < 26; j++)
+		{
+			if (str[i] == j + 'a' || str[i] == j + 'A')
+			{
+				a[j]++;
+			}
+		}
+	}
+}
+int main()
+{
+	char str[255];
+	int count[26] = { 0 };
+	int i;
+	gets(str);
+	counta_z(str, count);
+	for (i = 0; i < 26; i++)
+		if (count[i])
+			printf("%c出现的次数为:%d\n", i + 'a', count[i]);
+}
