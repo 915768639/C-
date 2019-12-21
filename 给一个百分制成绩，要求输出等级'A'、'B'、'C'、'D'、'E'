@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{ 
+  float a;
+  scanf("%f",&a);
+  if(a>=90&&a<=100)
+    printf("成绩是%.1f,相应的等级是A",a);
+  else if(a>=80&&a<90)
+    printf("成绩是%.1f,相应的等级是B",a);
+  else if(a>=70&&a<80)
+    printf("成绩是%.1f,相应的等级是C",a);
+  else if(a>=60&&a<70)
+    printf("成绩是%.1f,相应的等级是D",a);
+  else if(a>=0&&a<60)
+    printf("成绩是%.1f,相应的等级是E",a);
+  else
+    printf("输入成绩有误");
+}
