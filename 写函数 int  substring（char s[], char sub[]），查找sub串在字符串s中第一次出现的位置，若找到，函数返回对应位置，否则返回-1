@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+int substring(char s[], char sub[])
+{
+	int len, i, n;
+	char ch[80] = { 0 }, c[1] = { 0 };
+	len = strlen(sub);
+	for (i = 0; s[i]; i++)
+	{
+		strcpy(ch, s + i);
+		strcpy(ch + len, c);
+		if (strcmp(ch, sub) == 0)
+		{
+			n = i + 1;
+			break;
+		}
+		else
+			n = -1;
+	}
+	return n;
+}
+void  main(void)
+{
+	char s[99], sub[99];
+	gets(s);
+	gets(sub);
+	if (substring(s, sub) == -1)
+		printf("%s子串没有找到！", sub);
+	else
+		printf("子串%s在主串%s中第一次出现的位置是%d", sub, s, substring(s, sub));
+}
