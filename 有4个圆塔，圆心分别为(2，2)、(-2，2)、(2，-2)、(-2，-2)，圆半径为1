@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float x, y, deta1, deta2, deta3, deta4;
+    int h;
+    scanf("%f,%f",&x,&y);
+	deta1 = pow(x - 2, 2) + pow(y - 2, 2);
+	deta2 = pow(x - 2, 2) + pow(y + 2, 2);
+	deta3 = pow(x + 2, 2) + pow(y - 2, 2);
+	deta4 = pow(x + 2, 2) + pow(y + 2, 2);
+	if ((deta1 <= 1) || (deta2 <= 1) || (deta3 <= 1) || (deta4 <= 1))
+	{
+		h = 10;
+	}
+	else
+		h = 0;
+	printf("该点高度为%d米\n", h);
+}
