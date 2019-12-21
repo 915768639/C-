@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int reverse(int number)
+{
+	char ch[80]={0},temp;
+	itoa(number,ch,10);
+	int i,len;
+	len=strlen(ch)-1;
+	for(i=0;i<len;i++,len--)
+	{
+		temp=ch[i];
+		ch[i]=ch[len];
+		ch[len]=temp;
+	}
+	number=atoi(ch);
+	return number;
+}
+void main()
+{
+    int number;
+    scanf("%d",&number);
+    printf("%d", reverse(number) );
+}
