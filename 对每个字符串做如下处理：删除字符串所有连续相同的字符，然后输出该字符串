@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+void del_samechar(char ch[])
+{
+	int i, n, flag, j;
+	char cha[80];
+	for (j = 0; ch[j + 1]; j++)
+	{
+		flag = 1;
+		n = 1;
+		for (i = j; flag && ch[i + 1]; i++)
+		{
+			if (ch[i] == ch[i + 1])
+			{
+				n++;
+			}
+			else
+				flag = 0;
+		}
+		if (n != 1)
+		{
+			strcpy_s(cha, 80, (ch + j + n));
+			strcpy_s((ch + j), 80, cha);
+		}
+	}
+}
+int main()
+{
+	char str[100];
+	gets(str);
+	del_samechar(str);
+	puts(str);
+}
