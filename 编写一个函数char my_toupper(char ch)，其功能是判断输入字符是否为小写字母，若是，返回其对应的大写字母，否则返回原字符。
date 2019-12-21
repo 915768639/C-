@@ -1,0 +1,21 @@
+#include<stdio.h>
+int my_toupper(char ch)
+{
+	int a;
+	if(ch>='a'&&ch<='z')
+	{
+		a=ch-32;
+	}
+	else
+	{
+		a=ch;
+	}
+	return a;
+}
+void main()
+{    
+	char ch;
+    ch=getchar();
+    putchar(my_toupper(ch));
+}
+
