@@ -1,0 +1,48 @@
+#include<stdio.h>
+void sushu(int m,int n,int a[])
+{
+	int i, j, flag = 0, k = 0;
+	for (i = m; i < n; i++)
+	{
+		for (j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				flag = 0;
+				break;
+			}
+			else
+				flag = 1;
+		}
+		if (flag)
+		{
+			a[k] = i;
+			k++;
+		}
+	}
+}
+int main()
+{
+	int m, n, a[80], i, aa[10][2], j, flag;
+	scanf_s("%d%d", &m, &n);
+	sushu(m, n, a);
+	for (i = 0, j = 0; i < n - 1; i++)
+	{
+		if ((a[i + 1] - a[i]) == 2)
+		{
+			aa[j][0] = a[i];
+			aa[j][1] = a[i + 1];
+			j++;
+			flag = 1;
+		}
+	}
+	if (flag)
+	{
+		for (i = 0; i < j; i++)
+		{
+			printf("[%d,%d]", aa[i][0], aa[i][1]);
+		}
+	}
+	else
+		printf("没有孪生素数\n");
+}
