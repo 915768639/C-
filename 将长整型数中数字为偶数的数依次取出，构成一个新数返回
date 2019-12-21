@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+long compose(long number)
+{
+	char ch[40], c[40];
+	int i, len, j;
+	_itoa(number, ch, 10);
+	len = strlen(ch);
+	for (i = 0, j = 0; i < len; i++)
+	{
+		if (ch[i] == '0' || ch[i] == '2' || ch[i] == '4' || ch[i] == '6' || ch[i] == '8')
+		{
+			c[j] = ch[i];
+			j++;
+		}
+	}
+	c[j] = 0;
+	number = atoi(c);
+	return number;
+}
+int main()
+{
+	long int n;
+	scanf("%ld", &n);
+	printf("%ld\n", compose(n));
+	return 0;
+}
