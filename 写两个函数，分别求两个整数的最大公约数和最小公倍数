@@ -1,0 +1,27 @@
+#include<stdio.h>
+int hcf(int u,int v)
+{
+	int i,max,n;
+	n=(u>v)?u:v;
+	for(i=1;i<=n;i++)
+	{
+		if(u%i==0&&v%i==0)
+			max=i;
+	}
+	return max;
+}
+int lcd(int u,int v,int h)
+{
+	int min;
+	min=u*v/h;
+	return min;
+}
+int main( )
+{
+  int u,v,h,x;
+  scanf("%d%d",&u,&v);
+  h=hcf(u,v);
+  printf("H.C.F=%d\n",h);
+  x=lcd(u,v,h);
+  printf("L.C.D=%d\n",x);
+}
