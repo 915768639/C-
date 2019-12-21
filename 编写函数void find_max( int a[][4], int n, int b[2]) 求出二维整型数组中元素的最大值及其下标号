@@ -1,0 +1,28 @@
+#include<stdio.h>
+void find_max(int a[][4], int n, int b[2])
+{
+	int i, j;
+	b[0] = 0;
+	b[1] = 1;
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			if (a[b[0]][b[1]] < a[i][j])
+			{
+				b[0] = i;
+				b[1] = j;
+			}
+		}
+	}
+}
+int main()
+{
+	int array[10][4], m[2], n, i, j;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++)
+		for (j = 0; j < 4; j++)
+			scanf("%d", &array[i][j]);
+	find_max(array, n, m);
+	printf("最大值array[%d][%d]=%d", m[0], m[1], array[m[0]][m[1]]);
+}
