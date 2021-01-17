@@ -1,0 +1,55 @@
+#include<stdio.h>
+int main()
+{
+	float max(float a, float b);
+	float min(float a, float b);
+	float add(float a, float b);
+	float process(float a, float b, float(* f)(float a,float b));
+	float a, b, goal;
+	printf("请输入两个数字（以空格分离）：\n");
+	scanf_s("%f%f", &a, &b);
+	goal = process(a, b, max);
+	printf("最大值为：%f\n", go);
+	goal = process(a, b, min);
+	printf("最小值为：%f\n", go);
+	goal = process(a, b, add);
+	printf("和为：%f\n", go);
+}
+float max(float a, float b)
+{
+	float c;
+	if (a > b)
+	{
+		c = a;
+	}
+	else
+	{
+		c = b;
+	}
+	return c;
+}
+float min(float a, float b)
+{
+	float c;
+	if (a < b)
+	{
+		c = a;
+	}
+	else
+	{
+		c = b;
+	}
+	return c;
+}
+float add(float a, float b)
+{
+	float c;
+	c = a + b;
+	return c;
+}
+float process(float a, float b, float(*f)(float a,float b))
+{
+	float c;
+	c = (*f)(a, b);
+	return c;
+}
