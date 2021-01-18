@@ -1,0 +1,23 @@
+#include<stdio.h>
+float* search(float(*p)[4], int n);
+int main()
+{
+	float a[4][4] = { {74.5,79.5,99.0,95.0},{88.5,85.0,80.5,55.0},{95.0,95.0,95.0,95.5},{97.0,60.0,70.0,72.0} };
+	int n, i;
+	float** f, * p;
+	printf("请输入检索序号（1-4）：\n");
+	scanf_s("%d", &n);
+	p = search(a, n);
+	f = &p;
+	printf("检索结果：");
+	for (i = 0; i < 4; i++)
+	{
+		printf("%.1f\t", *(*f + i));
+	}
+}
+float* search(float(* p)[4], int n)
+{
+	float* f;
+	f = *(p + n - 1);
+	return f;
+}
